@@ -1,0 +1,143 @@
+{
+  "data": {
+    "ar_internal_metadata": [
+      {
+        "relname": "ar_internal_metadata",
+        "attname": "key",
+        "attnotnull": true,
+        "attnum": 1,
+        "typname": "varchar"
+      },
+      {
+        "relname": "ar_internal_metadata",
+        "attname": "value",
+        "attnotnull": false,
+        "attnum": 2,
+        "typname": "varchar"
+      },
+      {
+        "relname": "ar_internal_metadata",
+        "attname": "created_at",
+        "attnotnull": true,
+        "attnum": 3,
+        "typname": "timestamp"
+      },
+      {
+        "relname": "ar_internal_metadata",
+        "attname": "updated_at",
+        "attnotnull": true,
+        "attnum": 4,
+        "typname": "timestamp"
+      }
+    ],
+    "schema_migrations": [
+      {
+        "relname": "schema_migrations",
+        "attname": "version",
+        "attnotnull": true,
+        "attnum": 1,
+        "typname": "varchar"
+      }
+    ],
+    "testtypes": [
+      {
+        "relname": "testtypes",
+        "attname": "id",
+        "attnotnull": true,
+        "attnum": 1,
+        "typname": "int8"
+      },
+      {
+        "relname": "testtypes",
+        "attname": "binary",
+        "attnotnull": false,
+        "attnum": 2,
+        "typname": "bytea"
+      },
+      {
+        "relname": "testtypes",
+        "attname": "boolean",
+        "attnotnull": false,
+        "attnum": 3,
+        "typname": "bool"
+      },
+      {
+        "relname": "testtypes",
+        "attname": "date",
+        "attnotnull": false,
+        "attnum": 4,
+        "typname": "date"
+      },
+      {
+        "relname": "testtypes",
+        "attname": "datetime",
+        "attnotnull": false,
+        "attnum": 5,
+        "typname": "timestamp"
+      },
+      {
+        "relname": "testtypes",
+        "attname": "decimal",
+        "attnotnull": false,
+        "attnum": 6,
+        "typname": "numeric"
+      },
+      {
+        "relname": "testtypes",
+        "attname": "float",
+        "attnotnull": false,
+        "attnum": 7,
+        "typname": "float8"
+      },
+      {
+        "relname": "testtypes",
+        "attname": "integer",
+        "attnotnull": false,
+        "attnum": 8,
+        "typname": "int4"
+      },
+      {
+        "relname": "testtypes",
+        "attname": "string",
+        "attnotnull": false,
+        "attnum": 9,
+        "typname": "varchar"
+      },
+      {
+        "relname": "testtypes",
+        "attname": "text",
+        "attnotnull": false,
+        "attnum": 10,
+        "typname": "text"
+      },
+      {
+        "relname": "testtypes",
+        "attname": "time",
+        "attnotnull": false,
+        "attnum": 11,
+        "typname": "time"
+      },
+      {
+        "relname": "testtypes",
+        "attname": "timestamp",
+        "attnotnull": false,
+        "attnum": 12,
+        "typname": "timestamp"
+      },
+      {
+        "relname": "testtypes",
+        "attname": "created_at",
+        "attnotnull": true,
+        "attnum": 13,
+        "typname": "timestamp"
+      },
+      {
+        "relname": "testtypes",
+        "attname": "updated_at",
+        "attnotnull": true,
+        "attnum": 14,
+        "typname": "timestamp"
+      }
+    ]
+  }
+}
