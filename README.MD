@@ -1,6 +1,6 @@
 # Formify Rails
 
-A boilerplate generator that uses `ejs` to produce a `redux-saga` CRUD based on the database structure of any `rails` API using `postgresql`.
+A boilerplate generator that uses `ejs` to produce a `redux-saga` CRUD based on the database structure of any `rails` API that uses `postgresql`.
 
 # Introduction
 
