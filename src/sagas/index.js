@@ -17,6 +17,18 @@ const fetchCreate = async (request) => {
   return await response.json();
 };
 
+const fetchRead = (request) => {
+
+};
+
+const fetchUpdate = (request) => {
+
+};
+
+const fetchDelete = (request) => {
+
+};
+
 const fetchList = async (request) => {
   const response = await fetch(
     request.url,
@@ -45,6 +57,17 @@ function* create(action){
   }
 }
 
+function* read(record) {
+}
+
+function* update(record) {
+
+}
+
+function* deleter(record) {
+
+}
+
 function list(action){
   yield put({type: 'LOADING'});
   const url = `https://localhost:3000/${action.table}`;
@@ -58,6 +81,18 @@ function list(action){
 
 export function* watchCreate() {
   yield takeEvery('CREATE', create);
+}
+
+export function* watchRead() {
+  yield takeEvery('READ', read);
+}
+
+export function* watchUpdate() {
+  yield takeEvery('UPDATE', update);
+}
+
+export function* watchRead() {
+  yield takeEvery('DELETER', deleter);
 }
 
 export function* watchList() {
