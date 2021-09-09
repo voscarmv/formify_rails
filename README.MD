@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_212158) do
 end
 ```
 
-The idea was to generate CRUDs for every possible data type available from `rails` is `ActiveRecord`.
+The idea was to generate CRUDs for every possible data type available in `ActiveRecord`.
 
 You can generate your own `db.json` based on your own `postgresql` database by following the instructions in this experimental draft:
 
