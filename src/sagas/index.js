@@ -46,15 +46,16 @@ const fetchList = async (request) => {
 };
 
 function* create(action){
-  // yield put({type: 'LOADING'});
-  // const url = `https://localhost:3000/${action.table}`;
-  // const data = action.data;
-  // try {
-  //   const response = yield call(fetchCreate, {url, data});
-  //   yield put({ type: 'SUCCESS', payload: JSON.stringify(response) })
-  // } catch(e) {
-  //   yield put({ type: 'ERROR', error: e.message });
-  // }
+  console.log(action);
+  yield put({type: 'LOADING'});
+  const url = `https://localhost:3000/${action.table}`;
+  const data = action.data;
+  try {
+    const response = yield call(fetchCreate, {url, data});
+    yield put({ type: 'SUCCESS', payload: JSON.stringify(response) })
+  } catch(e) {
+    yield put({ type: 'ERROR', error: e.message });
+  }
 }
 
 function* read(action) {

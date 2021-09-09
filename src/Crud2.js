@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import Form from '@rjsf/core';
-import create from './actions';
+import { create } from './actions';
 
 const TesttypesCrud = () => {
     const testtypesForm = {
@@ -82,7 +82,7 @@ const TesttypesCrud = () => {
     const dispatch = useDispatch();
     const handleSubmit = FormData => {
         console.log(FormData);
-        dispatch(create(FormData));
+        dispatch(create({table: 'testtypes', data: FormData}));
         // dispatch corresponding Sagas
     };
     return (
