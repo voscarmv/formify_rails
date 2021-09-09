@@ -51,6 +51,7 @@ https://gist.github.com/voscarmv/cf4b126eed800a087d2f20a15f04265a
 
 # ToDo
 
+- [ ] Complete Sagas CRUD.
 - [ ] Automate database structure extraction.
 - [ ] Automate component generation and saving.
 - [ ] Add Ui styles to forms.
