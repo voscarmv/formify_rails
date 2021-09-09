@@ -19,7 +19,7 @@ import Form from 'react-jsonschema-form';
 
 const <%= table %> = () => {
 
-<%= table %>_form = {
+<%= table %>Form = {
     "title": "<%= table %>",
     "description": "A simple form example.",
     "type": "object",
@@ -39,7 +39,7 @@ const <%= table %> = () => {
     };
   
     return (
-      <Form schema={<%= table %>_form} onSubmit={handleSubmit} />
+      <Form schema={<%= table %>Form} onSubmit={handleSubmit} />
     );
   };
   

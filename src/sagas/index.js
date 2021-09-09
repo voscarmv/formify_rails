@@ -46,37 +46,37 @@ const fetchList = async (request) => {
 };
 
 function* create(action){
-  yield put({type: 'LOADING'});
-  const url = `https://localhost:3000/${action.table}`;
-  const data = action.data;
-  try {
-    const response = yield call(fetchCreate, {url, data});
-    yield put({ type: 'SUCCESS', payload: JSON.stringify(response) })
-  } catch(e) {
-    yield put({ type: 'ERROR', error: e.message });
-  }
+  // yield put({type: 'LOADING'});
+  // const url = `https://localhost:3000/${action.table}`;
+  // const data = action.data;
+  // try {
+  //   const response = yield call(fetchCreate, {url, data});
+  //   yield put({ type: 'SUCCESS', payload: JSON.stringify(response) })
+  // } catch(e) {
+  //   yield put({ type: 'ERROR', error: e.message });
+  // }
 }
 
-function* read(record) {
+function* read(action) {
 }
 
-function* update(record) {
+function* update(action) {
 
 }
 
-function* deleter(record) {
+function* deleter(action) {
 
 }
 
 function list(action){
-  yield put({type: 'LOADING'});
-  const url = `https://localhost:3000/${action.table}`;
-  try {
-    const response = yield call(fetchList, {url});
-    yield put({ type: 'SUCCESS', payload: JSON.stringify(response) })
-  } catch(e) {
-    yield put({ type: 'ERROR', error: e.message });
-  }
+  // yield put({type: 'LOADING'});
+  // const url = `https://localhost:3000/${action.table}`;
+  // try {
+  //   const response = yield call(fetchList, {url});
+  //   yield put({ type: 'SUCCESS', payload: JSON.stringify(response) })
+  // } catch(e) {
+  //   yield put({ type: 'ERROR', error: e.message });
+  // }
 }
 
 export function* watchCreate() {
@@ -91,8 +91,8 @@ export function* watchUpdate() {
   yield takeEvery('UPDATE', update);
 }
 
-export function* watchRead() {
-  yield takeEvery('DELETER', deleter);
+export function* watchDelete() {
+  yield takeEvery('DELETE', deleter);
 }
 
 export function* watchList() {
@@ -113,6 +113,9 @@ export default function* rootSaga() {
   yield all([
     call(watchIncrementAsync),
     call(watchCreate),
+    call(watchRead),
+    call(watchUpdate),
+    call(watchDelete),
     call(watchList),
   ])
 }

@@ -1,6 +1,7 @@
 const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 const INCREMENT_ASYNC = 'INCREMENT_ASYNC';
+const CREATE = 'CREATE';
 
 export default {
   INCREMENT,
