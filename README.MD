@@ -14,9 +14,9 @@ Are you tired of manually coding every single form in your React components? Now
 2. `$ cd src/scripts`
 3. `$ ./generate.sh`
 
-This should generate all the necessary components based on the `db/development' postgresql database.
+This should generate all the necessary components based on the `db/development` postgresql database. To use a different database name or credentials, modify file `src/scripts/formify.js`.
 
-A database from a `rails` project with the following `schema.rb`:
+For example: a database from a `rails` project with the following `schema.rb`:
 
 ```Ruby
 ActiveRecord::Schema.define(version: 2021_09_07_212158) do
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_212158) do
 end
 ```
 
-Produces the following source file:
+Will produce the following `component.js` file:
 
 ```Javascript
 
