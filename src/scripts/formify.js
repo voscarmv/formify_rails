@@ -1,5 +1,4 @@
 let {Connection} = require('postgresql-client');
-const data = require('./db.json');
 let ejs = require('ejs');
 let fs = require('fs');
 
@@ -33,13 +32,22 @@ let fs = require('fs');
           SELECT json_object_agg(agg.relname, agg.attrs)
           FROM agg;`,
         {params: ['%york%']});
-    const rows = result.rows;
-    console.log(rows);
+    const rows = result.rows[0];
+    const jsonSchema = rows.join('\n');
+    console.log(rows[0]);
     await connection.close(); // Disconnect
-    
-    let html = await ejs.renderFile('./formify.ejs', data);
-    console.log(typeof html);
-    console.log(html);
+
+    // fs.writeFile('db3.json', jsonSchema, function (err) {
+    //     // Checks if there is an error
+    //     if (err) return console.log(err);
+    // });
+
+    // const data = require('./db3.json');
+
+    const data = JSON.parse(jsonSchema);
+    let html = await ejs.renderFile('./formify.ejs', { data });
+    // console.log(typeof html);
+    // console.log(html);
     fs.writeFile('component.js', html, function (err) {
         // Checks if there is an error
         if (err) return console.log(err);
