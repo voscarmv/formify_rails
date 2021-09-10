@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_212158) do
 end
 ```
 
-Will produce the following source file:
+Will produce the following `component.js` file:
 
 ```Javascript
 
