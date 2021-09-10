@@ -1,3 +1,5 @@
 #!/bin/bash
 # This generates all the components for the app.
-npx ejs formify.ejs -f db.json > jsonforms.js
+node formify.js
+
+#npx ejs formify.ejs -f db.json > jsonforms.js
