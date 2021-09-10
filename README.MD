@@ -270,8 +270,9 @@ https://gist.github.com/voscarmv/cf4b126eed800a087d2f20a15f04265a
 # ToDo
 
 - [ ] Complete Sagas CRUD.
-- [ ] Automate database structure extraction.
-- [ ] Automate component generation and saving.
+- [ ] Debug `formify.js` to produce working code.
+- [x] Automate database structure extraction.
+- [ ] Automate component generation and file distribution.
 - [ ] Add Ui styles to forms.
 - [ ] Secure with JWT (devise-jwt)
 
