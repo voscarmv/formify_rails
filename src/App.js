@@ -2,7 +2,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import logo from './logo.svg';
 import increment, { incrementAsync, decrement } from './actions';
-import TesttypesCrud from './Crud2';
+import Create from './Create';
+import List from './List';
 import './App.css';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <TesttypesCrud />
+        <Create />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

@@ -2,10 +2,12 @@ const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 const INCREMENT_ASYNC = 'INCREMENT_ASYNC';
 const CREATE = 'CREATE';
+const LIST = 'LIST';
 
 export default {
   INCREMENT,
   DECREMENT,
   INCREMENT_ASYNC,
   CREATE,
+  LIST,
 };

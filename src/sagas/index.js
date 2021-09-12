@@ -48,7 +48,7 @@ const fetchList = async (request) => {
 function* create(action){
   console.log(action);
   yield put({type: 'LOADING'});
-  const url = `https://localhost:3000/${action.table}`;
+  const url = `http://localhost:3000/${action.table}`;
   const data = action.data;
   try {
     const response = yield call(fetchCreate, {url, data});
@@ -69,12 +69,14 @@ function* deleter(action) {
 
 }
 
-function list(action){
+function* list(action){
   // yield put({type: 'LOADING'});
-  // const url = `https://localhost:3000/${action.table}`;
+  // const url = `http://localhost:3000/${action.table}`;
   // try {
   //   const response = yield call(fetchList, {url});
-  //   yield put({ type: 'SUCCESS', payload: JSON.stringify(response) })
+  //   response = JSON.stringify(response);
+  //   console.log(response);
+  //   // yield put({ type: 'SUCCESS', payload: "NOTHING" })
   // } catch(e) {
   //   yield put({ type: 'ERROR', error: e.message });
   // }

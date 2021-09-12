@@ -80,9 +80,11 @@ const TesttypesCrud = () => {
     //   [],
     // );
     const dispatch = useDispatch();
+
     const handleSubmit = FormData => {
         console.log(FormData);
-        dispatch(create({table: 'testtypes', data: FormData}));
+        console.log(FormData.formData);
+        dispatch(create({table: 'testtypes', data: FormData.formData}));
         // dispatch corresponding Sagas
     };
     return (
