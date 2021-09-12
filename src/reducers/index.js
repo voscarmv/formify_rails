@@ -9,7 +9,7 @@ function count(state = initialState, action) {
     case 'DECREMENT':
       return state - 1
     case 'LOADING':
-      return {};
+      return 'Loading...';
     case 'SUCCESS':
       return action.payload;
     case 'ERROR':

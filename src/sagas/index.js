@@ -70,7 +70,7 @@ function* deleter(action) {
 }
 
 function* list(action){
-  // yield put({type: 'LOADING'});
+  yield put({type: 'LOADING'});
   const url = `http://localhost:3000/${action.table}`;
   try {
     let response = yield call(fetchList, {url});
