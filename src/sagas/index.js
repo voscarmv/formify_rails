@@ -71,15 +71,15 @@ function* deleter(action) {
 
 function* list(action){
   // yield put({type: 'LOADING'});
-  // const url = `http://localhost:3000/${action.table}`;
-  // try {
-  //   const response = yield call(fetchList, {url});
-  //   response = JSON.stringify(response);
-  //   console.log(response);
-  //   // yield put({ type: 'SUCCESS', payload: "NOTHING" })
-  // } catch(e) {
-  //   yield put({ type: 'ERROR', error: e.message });
-  // }
+  const url = `http://localhost:3000/${action.table}`;
+  try {
+    let response = yield call(fetchList, {url});
+    response = JSON.stringify(response);
+    console.log(response);
+    yield put({ type: 'SUCCESS', payload: response })
+  } catch(e) {
+    yield put({ type: 'ERROR', error: e.message });
+  }
 }
 
 export function* watchCreate() {
