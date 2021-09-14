@@ -45,13 +45,14 @@ let fs = require('fs');
     // const data = require('./db3.json');
 
     const data = JSON.parse(jsonSchema);
-    let html = await ejs.renderFile('./formify.ejs', { data });
-    // console.log(typeof html);
-    // console.log(html);
-    fs.writeFile('component.js', html, function (err) {
-        // Checks if there is an error
+    console.log(data);
+    // return;
+    for (const table in data){
+      let json = await ejs.renderFile('./create.ejs', {data: {[table]: data[table]}});
+      fs.writeFile(`${table}_form.json`, json, function (err) {
         if (err) return console.log(err);
-    });
+      });
+    }
     
 })();
 // let people = ['geddy', 'neil', 'alex'];

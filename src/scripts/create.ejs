@@ -1,0 +1,28 @@
+<%_ const formCorrespondence = {
+    'int8': { 'ARtype':'id', 'form':'integer' },
+    'bytea': { 'ARtype':'binary', 'form':'radio' },
+    'bool': { 'ARtype':'boolean', 'form':'checkbox' },
+    'date': { 'ARtype':'date', 'form':'date' },
+    'timestamp': { 'ARtype':'datetime', 'form':'datetime' },
+    'numeric': { 'ARtype':'decimal', 'form':'number' },
+    'float8': { 'ARtype':'float', 'form':'number' },
+    'int4': { 'ARtype':'integer', 'form':'integer' },
+    'varchar': { 'ARtype':'string', 'form':'string' },
+    'text': { 'ARtype':'text', 'form':'text' },
+    'time': { 'ARtype':'time', 'form':'time' },
+};
+_%>
+<% for(const table in data) { %>
+{
+    "title": "<%= table %>",
+    "description": "A simple form example.",
+    "type": "object",
+    "properties": {
+    <% data[table].forEach((f, i)=>{ %>
+        <%- include(`./${formCorrespondence[f.typname].form}`, {name: f.attname}) %>
+        <%= `${data[table].length} ${i}` %>
+        <%= data[table].length - 1 === i ? '}' : '},' %>
+    <% }); %>
+    }
+}
+<% } %>
