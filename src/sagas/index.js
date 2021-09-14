@@ -1,86 +1,5 @@
 import { all, call, put, takeEvery } from 'redux-saga/effects'
-
-const fetchCreate = async (request) => {
-  const response = await fetch(
-    request.url,
-    {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(request.data),
-    },
-  );
-  if(response.status !== 200){
-    throw Error(`${response.status} ${response.statusText}`);
-  }
-  return await response.json();
-};
-
-const fetchRead = async (request) => {
-  const response = await fetch(
-    request.url,
-    {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-      },
-    },
-  );
-  if(response.status !== 200){
-    throw Error(`${response.status} ${response.statusText}`);
-  }
-  return await response.json();
-};
-
-const fetchUpdate = async (request) => {
-  const response = await fetch(
-    request.url,
-    {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(request.data),
-    },
-  );
-  if(response.status !== 200){
-    throw Error(`${response.status} ${response.statusText}`);
-  }
-  return await response.json();
-};
-
-const fetchDelete = async (request) => {
-  const response = await fetch(
-    request.url,
-    {
-      method: 'DELETE',
-      headers: {
-        'content-type': 'application/json',
-      },
-    },
-  );
-  if(response.status !== 200){
-    throw Error(`${response.status} ${response.statusText}`);
-  }
-  return await response.json();
-};
-
-const fetchList = async (request) => {
-  const response = await fetch(
-    request.url,
-    {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-      },
-    },
-  );
-  if(response.status !== 200){
-    throw Error(`${response.status} ${response.statusText}`);
-  }
-  return await response.json();
-};
+import { fetchCreate, fetchRead, fetchUpdate, fetchDelete, fetchList } from './Api';
 
 function* create(action){
   console.log(action);
@@ -98,7 +17,7 @@ function* create(action){
 function* read(action) {
   console.log(action);
   yield put({type: 'LOADING'});
-  const url = `http://localhost:3000/${action.table}`;
+  const url = `http://localhost:3000/${action.table}/${action.id}`;
   try {
     const response = yield call(fetchRead, {url});
     yield put({ type: 'SUCCESS', payload: JSON.stringify(response) })
