@@ -4,7 +4,7 @@ A boilerplate generator that uses `ejs` to produce a `redux-saga` CRUD based on 
 
 # Introduction
 
-Are you tired of manually coding every single form in your React components? Now you can generate them automatically. Formify detects the structure of your database and generates the necessary forms based on the field data types. You can then add or remove details from the generated boilerplate to fit your needs.
+Are you tired of manually coding every single form in your React components? Now you can generate them automatically. Formify detects the structure of your database and generates the necessary forms based on the tables and fields. You can then add or remove details from the generated boilerplate to fit your needs.
 
 # Getting started
 
@@ -18,7 +18,7 @@ Are you tired of manually coding every single form in your React components? Now
 
 This should generate all the necessary forms based on the  `postgresql.json` database. To use a different database name or credentials, modify the `postgresql.json` file.
 
-For example: a database from a `rails` project with the following `schema.rb`:
+For example, a database from a `rails` project with the following `schema.rb`:
 
 ```Ruby
 ActiveRecord::Schema.define(version: 2021_09_07_212158) do
