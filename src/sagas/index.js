@@ -1,4 +1,4 @@
-import { all, call, delay, put, takeEvery } from 'redux-saga/effects'
+import { all, call, put, takeEvery } from 'redux-saga/effects'
 
 const fetchCreate = async (request) => {
   const response = await fetch(
@@ -17,7 +17,7 @@ const fetchCreate = async (request) => {
   return await response.json();
 };
 
-const fetchRead = (request) => {
+const fetchRead = async (request) => {
   const response = await fetch(
     request.url,
     {
@@ -33,7 +33,7 @@ const fetchRead = (request) => {
   return await response.json();
 };
 
-const fetchUpdate = (request) => {
+const fetchUpdate = async (request) => {
   const response = await fetch(
     request.url,
     {
@@ -50,7 +50,7 @@ const fetchUpdate = (request) => {
   return await response.json();
 };
 
-const fetchDelete = (request) => {
+const fetchDelete = async (request) => {
   const response = await fetch(
     request.url,
     {
@@ -125,7 +125,7 @@ function* deleter(action) {
   yield put({type: 'LOADING'});
   const url = `http://localhost:3000/${action.table}/${action.id}`;
   try {
-    const response = yield call(fetchCreate, {url});
+    const response = yield call(fetchDelete, {url});
     yield put({ type: 'SUCCESS', payload: JSON.stringify(response) })
   } catch(e) {
     yield put({ type: 'ERROR', error: e.message });

@@ -1,13 +1,9 @@
 import { combineReducers } from 'redux';
 
-const initialState = 0;
+const initialState = null;
 
-function count(state = initialState, action) {
+function response(state = initialState, action) {
   switch (action.type) {
-    case 'INCREMENT':
-      return state + 1
-    case 'DECREMENT':
-      return state - 1
     case 'LOADING':
       return 'Loading...';
     case 'SUCCESS':
@@ -20,7 +16,7 @@ function count(state = initialState, action) {
 }
 
 const rootReducer = combineReducers({
-  count
+  response
 });
 
 export default rootReducer;

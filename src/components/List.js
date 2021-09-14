@@ -2,18 +2,19 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Form from '@rjsf/core';
 import { list } from '../actions';
+import { useRouteMatch } from "react-router-dom";
 
 const List = () => {
-    const route = useRouteMatch('/create/:table');
-    const testtypesForm = require('forms/empty.json');
+    const route = useRouteMatch('/list/:table');
+    const form = require('./forms/empty.json');
     const dispatch = useDispatch();
-    const response = useSelector(state => state.count)
+    const response = useSelector(state => state.response)
     const handleSubmit = () => {
         dispatch(list({table: route.params.table}));
     };
     return (
         <div>
-            <Form schema={testtypesForm} onSubmit={handleSubmit} />
+            <Form schema={form} onSubmit={handleSubmit} />
             {response}
         </div>
     );
