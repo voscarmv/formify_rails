@@ -3,13 +3,8 @@ let ejs = require('ejs');
 let fs = require('fs');
 
 (async () => {
-    const connection = new Connection({
-        host: 'localhost',
-        user: 'postgres',
-        password: 'postgres',
-        port: 5432,
-        database: 'db/table_development',
-    });;
+    const postgresql = require('./postgresql.json');
+    const connection = new Connection(postgresql);;
     await connection.connect();
     const result = await connection.query(
         `WITH rows AS (
