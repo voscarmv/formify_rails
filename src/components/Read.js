@@ -1,15 +1,15 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Form from '@rjsf/core';
-import { list } from '../actions';
+import { read } from '../actions';
 
-const List = () => {
-    const route = useRouteMatch('/create/:table');
+const Read = () => {
+    const route = useRouteMatch('/create/:table/:id');
     const testtypesForm = require('forms/empty.json');
     const dispatch = useDispatch();
     const response = useSelector(state => state.count)
     const handleSubmit = () => {
-        dispatch(list({table: route.params.table}));
+        dispatch(read({table: route.params.table, id: route.params.id}));
     };
     return (
         <div>
@@ -19,4 +19,4 @@ const List = () => {
     );
 };
 
-export default List;
+export default Read;

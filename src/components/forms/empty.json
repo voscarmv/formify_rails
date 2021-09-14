@@ -1,0 +1,7 @@
+{
+    "title": "testtypes",
+    "description": "A simple form example.",
+    "type": "object",
+    "properties": {
+    }
+}
