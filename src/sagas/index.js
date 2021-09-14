@@ -18,15 +18,52 @@ const fetchCreate = async (request) => {
 };
 
 const fetchRead = (request) => {
-
+  const response = await fetch(
+    request.url,
+    {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+      },
+    },
+  );
+  if(response.status !== 200){
+    throw Error(`${response.status} ${response.statusText}`);
+  }
+  return await response.json();
 };
 
 const fetchUpdate = (request) => {
-
+  const response = await fetch(
+    request.url,
+    {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(request.data),
+    },
+  );
+  if(response.status !== 200){
+    throw Error(`${response.status} ${response.statusText}`);
+  }
+  return await response.json();
 };
 
 const fetchDelete = (request) => {
-
+  const response = await fetch(
+    request.url,
+    {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+      },
+    },
+  );
+  if(response.status !== 200){
+    throw Error(`${response.status} ${response.statusText}`);
+  }
+  return await response.json();
 };
 
 const fetchList = async (request) => {
@@ -59,14 +96,40 @@ function* create(action){
 }
 
 function* read(action) {
+  console.log(action);
+  yield put({type: 'LOADING'});
+  const url = `http://localhost:3000/${action.table}`;
+  try {
+    const response = yield call(fetchRead, {url});
+    yield put({ type: 'SUCCESS', payload: JSON.stringify(response) })
+  } catch(e) {
+    yield put({ type: 'ERROR', error: e.message });
+  }  
 }
 
 function* update(action) {
-
+  console.log(action);
+  yield put({type: 'LOADING'});
+  const url = `http://localhost:3000/${action.table}/${action.id}`;
+  const data = action.data;
+  try {
+    const response = yield call(fetchUpdate, {url, data});
+    yield put({ type: 'SUCCESS', payload: JSON.stringify(response) })
+  } catch(e) {
+    yield put({ type: 'ERROR', error: e.message });
+  }
 }
 
 function* deleter(action) {
-
+  console.log(action);
+  yield put({type: 'LOADING'});
+  const url = `http://localhost:3000/${action.table}/${action.id}`;
+  try {
+    const response = yield call(fetchCreate, {url});
+    yield put({ type: 'SUCCESS', payload: JSON.stringify(response) })
+  } catch(e) {
+    yield put({ type: 'ERROR', error: e.message });
+  }
 }
 
 function* list(action){
