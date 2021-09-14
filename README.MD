@@ -51,7 +51,7 @@ Will generate the following form through the `/src/components/testtypes_form.jso
 
 This form object is then loaded to the CRUD components in `/src/components/`. For a better understanding of how these form objects work, visit the [react-jsonschema-form playground](https://rjsf-team.github.io/react-jsonschema-form/), as well as [their docs](https://react-jsonschema-form.readthedocs.io/en/latest/).
 
-For more details about how this method works, check out this experimental draft:
+For more details about how the data pipeline from rails to react works, check out this experimental draft:
 
 https://gist.github.com/voscarmv/cf4b126eed800a087d2f20a15f04265a
 
