@@ -7,20 +7,20 @@ export const create = (record) => ({
 })
 
 export const read = (record) => ({
-  type: types.CREATE,
+  type: types.READ,
   table: record.table,
   id: record.id,
 })
 
 export const update = (record) => ({
-  type: types.CREATE,
+  type: types.UPDATE,
   table: record.table,
   data: record.data,
   id: record.id,
 })
 
 export const deleter = (record) => ({
-  type: types.CREATE,
+  type: types.DELETE,
   table: record.table,
   id: record.id,
 })

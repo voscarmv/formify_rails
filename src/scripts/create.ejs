@@ -19,7 +19,8 @@ _%>
     "type": "object",
     "properties": {
 <%_ data[table].forEach((f, i)=>{ _%>
-<%- include(`./elements/${formCorrespondence[f.typname].form}`, {name: f.attname}) _%><%= data[table].length - 1 === i ? '' : ',' %>
+<%- include(`./elements/${formCorrespondence[f.typname].form}`, {name: f.attname}) _%>
+<%= data[table].length - 1 === i ? '' : ',' %>
 <%_ }); _%>
     }
 }
