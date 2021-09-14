@@ -2,8 +2,11 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import Form from '@rjsf/core';
 import { create } from './actions';
+import { useRouteMatch } from "react-router-dom";
 
 const TesttypesCrud = () => {
+    const table = useRouteMatch('/create/:table/:id');
+    console.log(table);
     const testtypesForm = {
         "title": "testtypes",
         "description": "A simple form example.",
