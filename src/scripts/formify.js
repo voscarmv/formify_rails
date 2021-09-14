@@ -52,7 +52,6 @@ let fs = require('fs');
     }
 
     for (const table in data){
-      tablesArr.push(table);
       let json = await ejs.renderFile('./ui.ejs', {data: {[table]: data[table]}});
       fs.writeFile(`../components/forms/${table}_ui.json`, json, function (err) {
         if (err) return console.log(err);

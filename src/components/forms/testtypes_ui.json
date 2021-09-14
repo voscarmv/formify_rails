@@ -36,7 +36,10 @@
   }
 ,
 "text": {
-    "ui.widget": "textarea"
+    "ui:widget": "textarea",
+    "ui:options": {
+      "rows": 5
+    }
   }
 ,
 "time": {
