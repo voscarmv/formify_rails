@@ -3,5 +3,5 @@
     "user": "postgres",
     "password": "postgres",
     "port": "5432",
-    "database": "db/development"
+    "database": "db/table_development"
 }

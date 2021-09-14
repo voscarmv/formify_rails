@@ -45,8 +45,16 @@ let fs = require('fs');
     let tablesArr = [];
     for (const table in data){
       tablesArr.push(table);
-      let json = await ejs.renderFile('./create.ejs', {data: {[table]: data[table]}});
+      let json = await ejs.renderFile('./elements.ejs', {data: {[table]: data[table]}});
       fs.writeFile(`../components/forms/${table}_form.json`, json, function (err) {
+        if (err) return console.log(err);
+      });
+    }
+
+    for (const table in data){
+      tablesArr.push(table);
+      let json = await ejs.renderFile('./ui.ejs', {data: {[table]: data[table]}});
+      fs.writeFile(`../components/forms/${table}_ui.json`, json, function (err) {
         if (err) return console.log(err);
       });
     }
