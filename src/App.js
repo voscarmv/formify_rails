@@ -19,17 +19,17 @@ function App() {
       {tables.map(
         t => (
           <ul>
-          <h2>{t} CRUD:</h2>
-          <li><Link to={`/create/${t}`}>Create</Link></li>
-          <li><Link to={`/read/${t}/1`}>Read</Link></li>
-          <li><Link to={`/update/${t}/1`}>Update</Link></li>
-          <li><Link to={`/delete/${t}/1`}>Delete</Link></li>
-          <li><Link to={`/list/${t}`}>List</Link></li>
+            <h2>{t} CRUD:</h2>
+            <li><Link to={`/create/${t}`}>Create</Link></li>
+            <li><Link to={`/read/${t}/1`}>Read</Link></li>
+            <li><Link to={`/update/${t}/1`}>Update</Link></li>
+            <li><Link to={`/delete/${t}/1`}>Delete</Link></li>
+            <li><Link to={`/list/${t}`}>List</Link></li>
           </ul>
-          )
+        )
       )}
       <Switch>
-      <Route path="/create">
+        <Route path="/create">
           <Create />
         </Route>
         <Route path="/read">
