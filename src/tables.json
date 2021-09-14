@@ -1,1 +1,1 @@
-{ "tables": ["testtypes", "ar_internal_metadata", "schema_migrations_component"]}
+{"tables":["ar_internal_metadata","schema_migrations","testtypes"]}

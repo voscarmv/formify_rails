@@ -12,17 +12,15 @@
     'time': { 'ARtype':'time', 'form':'time' },
 };
 _%>
-<% for(const table in data) { %>
+<%_ for(const table in data) { _%>
 {
     "title": "<%= table %>",
     "description": "A simple form example.",
     "type": "object",
     "properties": {
-    <% data[table].forEach((f, i)=>{ %>
-        <%- include(`./${formCorrespondence[f.typname].form}`, {name: f.attname}) %>
-        <%= `${data[table].length} ${i}` %>
-        <%= data[table].length - 1 === i ? '}' : '},' %>
-    <% }); %>
+<%_ data[table].forEach((f, i)=>{ _%>
+<%- include(`./elements/${formCorrespondence[f.typname].form}`, {name: f.attname}) _%><%= data[table].length - 1 === i ? '' : ',' %>
+<%_ }); _%>
     }
 }
 <% } %>

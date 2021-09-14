@@ -1,129 +1,85 @@
-
 {
     "title": "testtypes",
     "description": "A simple form example.",
     "type": "object",
     "properties": {
-    
-        "id": {
+"id": {
     "title": "id",
     "type": "integer"
-  },
-
-        14 0
-        },
-    
-        "binary": {
+  }
+,
+"binary": {
     "type": "boolean",
     "title": "binary",
     "description": ""
-  },
-
-        14 1
-        },
-    
-        "boolean": {
+  }
+,
+"boolean": {
     "type": "boolean",
     "title": "boolean",
     "description": ""
-  },
-
-        14 2
-        },
-    
-          "date": {
+  }
+,
+  "date": {
     "type": "string",
     "format": "date",
     "title": "date"
-  },
-
-        14 3
-        },
-    
-        "datetime": {
+  }
+,
+"datetime": {
     "type": "string",
     "format": "date-time",
     "title": "datetime"
-  },
-
-        14 4
-        },
-    
-        "decimal": {
+  }
+,
+"decimal": {
     "title": "decimal",
     "type": "number"
-  },
-
-        14 5
-        },
-    
-        "float": {
+  }
+,
+"float": {
     "title": "float",
     "type": "number"
-  },
-
-        14 6
-        },
-    
-        "integer": {
+  }
+,
+"integer": {
     "title": "integer",
     "type": "integer"
-  },
-
-        14 7
-        },
-    
-        "string": {
+  }
+,
+"string": {
     "type": "string",
     "title": "string"
-  },
-
-        14 8
-        },
-    
-        "text": {
+  }
+,
+"text": {
     "type": "string",
     "title": "text"
-  },
-
-        14 9
-        },
-    
-        "time": {
+  }
+,
+"time": {
     "type": "string",
     "format": "date-time",
     "title": "time"
-  },
-
-        14 10
-        },
-    
-        "timestamp": {
+  }
+,
+"timestamp": {
     "type": "string",
     "format": "date-time",
     "title": "timestamp"
-  },
-
-        14 11
-        },
-    
-        "created_at": {
+  }
+,
+"created_at": {
     "type": "string",
     "format": "date-time",
     "title": "created_at"
-  },
-
-        14 12
-        },
-    
-        "updated_at": {
+  }
+,
+"updated_at": {
     "type": "string",
     "format": "date-time",
     "title": "updated_at"
-  },
+  }
 
-        14 13
-        }
-    
     }
 }

@@ -1,36 +1,30 @@
-
-
 {
     "title": "ar_internal_metadata",
     "description": "A simple form example.",
     "type": "object",
     "properties": {
-    
-        "key": {
+"key": {
     "type": "string",
     "title": "key"
-  },
-
-    
-        "value": {
+  }
+,
+"value": {
     "type": "string",
     "title": "value"
-  },
-
-    
-        "created_at": {
+  }
+,
+"created_at": {
     "type": "string",
     "format": "date-time",
     "title": "created_at"
-  },
-
-    
-        "updated_at": {
+  }
+,
+"updated_at": {
     "type": "string",
     "format": "date-time",
     "title": "updated_at"
-  },
+  }
 
-    
     }
 }
+

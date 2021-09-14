@@ -30,29 +30,36 @@ let fs = require('fs');
             GROUP BY rows.relname
           )                           
           SELECT json_object_agg(agg.relname, agg.attrs)
-          FROM agg;`,
-        {params: ['%york%']});
+          FROM agg;`);
     const rows = result.rows[0];
     const jsonSchema = rows.join('\n');
-    console.log(rows[0]);
     await connection.close(); // Disconnect
 
-    // fs.writeFile('db3.json', jsonSchema, function (err) {
+    // Uncomment the following lines to generate a database schema JSON file db.json:
+    //
+    // fs.writeFile('db.json', jsonSchema, function (err) {
     //     // Checks if there is an error
     //     if (err) return console.log(err);
     // });
 
-    // const data = require('./db3.json');
+    // Uncomment the following line to load data from a database json file:
+    //
+    // const data = require('./db.json');
 
     const data = JSON.parse(jsonSchema);
-    console.log(data);
-    // return;
+    let tablesArr = [];
     for (const table in data){
+      tablesArr.push(table);
       let json = await ejs.renderFile('./create.ejs', {data: {[table]: data[table]}});
-      fs.writeFile(`${table}_form.json`, json, function (err) {
+      fs.writeFile(`../components/forms/${table}_form.json`, json, function (err) {
         if (err) return console.log(err);
       });
     }
+
+    fs.writeFile('../tables.json', JSON.stringify({tables:tablesArr}), function (err) {
+        // Checks if there is an error
+        if (err) return console.log(err);
+    });
+
     
 })();
-// let people = ['geddy', 'neil', 'alex'];
