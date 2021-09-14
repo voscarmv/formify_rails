@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Form from '@rjsf/core';
-import { list } from './actions';
+import { list } from '../actions';
 
 const TesttypesList = () => {
     const testtypesForm = {

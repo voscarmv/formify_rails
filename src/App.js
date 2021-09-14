@@ -2,8 +2,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import logo from './logo.svg';
 import increment, { incrementAsync, decrement } from './actions';
-import Create from './Create';
-import List from './List';
+import Create from './components/Create';
+import List from './components/List';
 import './App.css';
 import {
   BrowserRouter as Router,
