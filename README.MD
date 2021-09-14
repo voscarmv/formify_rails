@@ -45,81 +45,9 @@ ActiveRecord::Schema.define(version: 2021_09_07_212158) do
 end
 ```
 
-Will generate the following `/src/components/testtypes_form.json` file:
+Will generate the following form through the `/src/components/testtypes_form.json` "form object" file:
 
-```
-{
-  "title": "testtypes",
-  "description": "A simple form example.",
-  "type": "object",
-  "properties": {
-    "id": {
-      "title": "id",
-      "type": "integer"
-    },
-    "binary": {
-      "type": "boolean",
-      "title": "binary",
-      "description": ""
-    },
-    "boolean": {
-      "type": "boolean",
-      "title": "boolean",
-      "description": ""
-    },
-    "date": {
-      "type": "string",
-      "format": "date",
-      "title": "date"
-    },
-    "datetime": {
-      "type": "string",
-      "format": "date-time",
-      "title": "datetime"
-    },
-    "decimal": {
-      "title": "decimal",
-      "type": "number"
-    },
-    "float": {
-      "title": "float",
-      "type": "number"
-    },
-    "integer": {
-      "title": "integer",
-      "type": "integer"
-    },
-    "string": {
-      "type": "string",
-      "title": "string"
-    },
-    "text": {
-      "type": "string",
-      "title": "text"
-    },
-    "time": {
-      "type": "string",
-      "format": "date-time",
-      "title": "time"
-    },
-    "timestamp": {
-      "type": "string",
-      "format": "date-time",
-      "title": "timestamp"
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "title": "created_at"
-    },
-    "updated_at": {
-      "type": "string",
-      "format": "date-time",
-      "title": "updated_at"
-    }
-  }
-}
-```
+![Example of a generated form](./screenshot.png)
 
 This form object is then loaded to the CRUD components in `/src/components/`. For a better understanding of how these form objects work, visit the [react-jsonschema-form playground](https://rjsf-team.github.io/react-jsonschema-form/), as well as [their docs](https://react-jsonschema-form.readthedocs.io/en/latest/).
 

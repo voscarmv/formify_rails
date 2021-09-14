@@ -1,0 +1,19 @@
+{
+"key": {
+    "ui:widget": "password"
+  }
+,
+"value": {
+    "ui:widget": "password"
+  }
+,
+"created_at": {
+  "ui:widget": "alt-datetime"
+}
+,
+"updated_at": {
+  "ui:widget": "alt-datetime"
+}
+
+}
+

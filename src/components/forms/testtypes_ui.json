@@ -1,0 +1,59 @@
+{
+"id": {
+    "ui.widget": "updown"
+  }
+,
+"binary": {
+    "ui:widget": "radio"
+  }
+,
+"boolean": {
+    "ui:widget": "select"
+  }
+,
+  "date": {
+    "ui:widget": "alt-date"
+  }
+,
+"datetime": {
+  "ui:widget": "alt-datetime"
+}
+,
+"decimal": {
+    "ui.widget": "updown"
+  }
+,
+"float": {
+    "ui.widget": "updown"
+  }
+,
+"integer": {
+    "ui.widget": "updown"
+  }
+,
+"string": {
+    "ui:widget": "password"
+  }
+,
+"text": {
+    "ui.widget": "textarea"
+  }
+,
+"time": {
+    "ui.widget": "alt-datetime"
+  }
+,
+"timestamp": {
+  "ui:widget": "alt-datetime"
+}
+,
+"created_at": {
+  "ui:widget": "alt-datetime"
+}
+,
+"updated_at": {
+  "ui:widget": "alt-datetime"
+}
+
+}
+
