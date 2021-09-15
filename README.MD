@@ -18,6 +18,8 @@ Are you tired of manually coding every single form in your React components? Now
 
 This should generate all the necessary forms based on the  `postgresql.json` database. To use a different database name or credentials, modify the `postgresql.json` file.
 
+# Example
+
 For example, a database from a `rails` project with the following `schema.rb`:
 
 ```Ruby
@@ -50,6 +52,12 @@ Will generate the following form through the `/src/components/testtypes_form.jso
 ![Example of a generated form](./screenshot.png)
 
 This form object is then loaded to the CRUD components in `/src/components/`. For a better understanding of how these form objects work, visit the [react-jsonschema-form playground](https://rjsf-team.github.io/react-jsonschema-form/), as well as [their docs](https://react-jsonschema-form.readthedocs.io/en/latest/).
+
+# Testing
+
+You can test the CRUD against [`formify_rails_api`](https://github.com/voscarmv/formify_rails_api/). It's a typical unsecured Rails API with the `schema.rb` from the example in this `README`.
+
+# Development
 
 For more details about how the data pipeline from rails to react works, check out this experimental draft:
 
