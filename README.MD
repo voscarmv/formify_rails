@@ -20,7 +20,7 @@ This should generate all the necessary forms based on the  `postgresql.json` dat
 
 # Example
 
-For example, a database from a `rails` project with the following `schema.rb`:
+For example, a database from [a `rails` API](https://github.com/voscarmv/formify_rails_api/blob/main/db/schema.rb) with the following `schema.rb`:
 
 ```Ruby
 ActiveRecord::Schema.define(version: 2021_09_07_212158) do
