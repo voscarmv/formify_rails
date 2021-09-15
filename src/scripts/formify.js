@@ -49,10 +49,7 @@ let fs = require('fs');
       fs.writeFile(`../components/forms/${table}_form.json`, json, function (err) {
         if (err) return console.log(err);
       });
-    }
-
-    for (const table in data){
-      let json = await ejs.renderFile('./ui.ejs', {data: {[table]: data[table]}});
+      json = await ejs.renderFile('./ui.ejs', {data: {[table]: data[table]}});
       fs.writeFile(`../components/forms/${table}_ui.json`, json, function (err) {
         if (err) return console.log(err);
       });
